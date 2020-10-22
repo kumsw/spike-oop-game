@@ -5,7 +5,14 @@ class Player {
         this.currentYLocation = y;
     }
     setCurrentLocation([x, y]) {
+        //shorthand
         this.currentXLocation += x
-        this.currentYLocation += this.currentYLocation + y
+        //does same thing
+        this.currentYLocation = this.currentYLocation + y
+    }
+    drawSelf() {
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.fillRect = (this.currentXLocation, this.currentYLocation, height, width);
     }
 }
