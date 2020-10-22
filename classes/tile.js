@@ -14,11 +14,11 @@ class Tile {
       ctx.fillStyle = "grey";
       ctx.moveTo = (this.x, this.y + height);
       ctx.lineTo = (this.x + width / 2, this.y + height / 2);
-      ctx.lineTo = (this.x + width, this.y - height / 2);
+      ctx.lineTo = (this.x + width, this.y + height);
+    } else if (this.tileType === "sky") {
+      ctx.beginPath();
+      ctx.fillStyle = "blue";
+      ctx.fillRect = (this.x, this.y, height, width);
     }
   }
 }
-
-const tileTrial = new Tile(100, 100, "spike");
-
-tileTrial.draw(100, 100);
