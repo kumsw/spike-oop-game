@@ -2,8 +2,8 @@ class Screen {
     constructor(levelLayout) {
         this.arrayOfTiles = levelLayout.map(this.createTile);
     }
-    createTile(array) {
-        const tile = new Tile(array[0], array[1], array[2]);
+    createTile([x, y, tileType]) {
+        const tile = new Tile(x, y, tileType);
         return tile
     }
     drawLevel() {
