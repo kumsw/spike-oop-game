@@ -1,6 +1,13 @@
-const collider = require('./classes/collider');
-const collider = require('./classes/controller');
-const collider = require('./classes/game');
-const collider = require('./classes/player');
-const collider = require('./classes/screen');
-const collider = require('./classes/tile');
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+ctx.beginPath();
+ctx.fillStyle = "black";
+ctx.lineWidth = 5;
+// ctx.fillRect(100, 100, 100, 100);
+ctx.moveTo = (100, 100);
+ctx.lineTo = (150, 150);
+// ctx.lineTo = (200, 150);
+ctx.stroke();
