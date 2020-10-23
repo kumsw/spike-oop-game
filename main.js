@@ -5,19 +5,12 @@ canvas.height = window.innerHeight;
 
 let unit = 100;
 if (canvas.height > canvas.width) {
-  unit = canvas.width / 10;
+  unit = canvas.width / 20;
 } else {
-  unit = canvas.height / 10;
+  unit = canvas.height / 20;
 }
 
-// figure out levelLayout
-// put in all heights and widths and make them proportional unit
+// add spikes
+// make it so player position returns to start when hit spike
 
-// finish startgame()
-
-// canvas say play game
-// addevent listner click on canvas
-// add event listener for key presses
-// ()=> {const newGaME = NEW gAME; NEWgAME.startGame}
-
-// every time player movers the page needs to be refreshed and the plaers and tiles 'redrawn'
+//move up and wait a second( delay the jump)

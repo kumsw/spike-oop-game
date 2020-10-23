@@ -9,17 +9,18 @@ class Tile {
     if (this.tileType === "ground") {
       ctx.beginPath();
       ctx.fillStyle = "brown";
-      ctx.fillRect = (xUnit, yUnit, unit, unit);
+      ctx.fillRect(xUnit, yUnit, unit, unit);
     } else if (this.tileType === "spike") {
       ctx.beginPath();
-      ctx.fillStyle = "grey";
-      ctx.moveTo = (xUnit, yUnit + unit);
-      ctx.lineTo = (xUnit + unit / 2, yUnit + unit / 2);
-      ctx.lineTo = (xUnit + unit, yUnit + unit);
+      ctx.fillStyle = "black";
+      ctx.moveTo(xUnit, yUnit + unit);
+      ctx.lineTo(xUnit + unit / 2, yUnit + unit / 2);
+      ctx.lineTo(xUnit + unit, yUnit + unit);
+      ctx.fill();
     } else if (this.tileType === "sky") {
       ctx.beginPath();
       ctx.fillStyle = "blue";
-      ctx.fillRect = (xUnit, yUnit, unit, unit);
+      ctx.fillRect(xUnit, yUnit, unit, unit);
     }
   }
 }
