@@ -51,12 +51,19 @@ class Game {
   }
 }
 
-let newGame = new Game();
-newGame.makeLevelLayout();
-newGame.startGame();
+let button = document.querySelector("button");
+button.addEventListener("click", onClick);
 
-setInterval(newGame.refreshScreen.bind(newGame), 50);
+function onClick() {
+  document.body.style.background = "white";
+  button.remove();
+  let newGame = new Game();
+  newGame.makeLevelLayout();
+  newGame.startGame();
 
-document.addEventListener("keydown", (event) => {
-  newGame.playerMoves(event);
-});
+  setInterval(newGame.refreshScreen.bind(newGame), 50);
+
+  document.addEventListener("keydown", (event) => {
+    newGame.playerMoves(event);
+  });
+}
