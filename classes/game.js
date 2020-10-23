@@ -6,11 +6,10 @@ class Game {
   }
   killPlayer() {
     this.levelLayout.forEach(([x, y, tileType]) => {
-      console.log(x, y, tileType);
       if (
         tileType === "spike" &&
-        this.controller.player.currentXLocation === x * unit &&
-        this.controller.player.currentYLocation === y * unit
+        Math.round(this.controller.player.currentXLocation / unit) === x &&
+        Math.round(this.controller.player.currentYLocation / unit) === y
       ) {
         console.log("spike");
         this.controller.player.currentXLocation = 0;

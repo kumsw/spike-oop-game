@@ -3,11 +3,11 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let unit = 100;
+let unit;
 if (canvas.height > canvas.width) {
-  unit = canvas.width / 20;
+    unit = canvas.width / 20;
 } else {
-  unit = canvas.height / 20;
+    unit = canvas.height / 20;
 }
 
 // add spikes
