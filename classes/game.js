@@ -4,6 +4,15 @@ class Game {
     this.controller = new Controller();
     this.screen = new Screen(this.levelLayout);
   }
+  killPlayer() {
+    this.levelLayout.forEach((tile) => {
+      if (tile[2] === "spike" && this.controller.player.currentXLocation === tile[0] * unit && this.controller.player.currentYLocation === tile[1] * unit) {
+        this.controller.player.currentXLocation = 0;
+        this.controller.player.currentYLocation = 8 * unit;
+      }
+    })
+
+  }
   startGame() {
     this.screen.drawLevel();
     this.controller.drawPlayer();
@@ -29,6 +38,7 @@ class Game {
 
   playerMoves(event) {
     this.controller.movePlayer(event.keyCode);
+    this.killPlayer();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.startGame();
   }
