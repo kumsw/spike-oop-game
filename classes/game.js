@@ -7,6 +7,7 @@ class Game {
   killPlayer() {
     this.levelLayout.forEach((tile) => {
       if (tile[2] === "spike" && this.controller.player.currentXLocation === tile[0] * unit && this.controller.player.currentYLocation === tile[1] * unit) {
+        console.log('spike')
         this.controller.player.currentXLocation = 0;
         this.controller.player.currentYLocation = 8 * unit;
       }
