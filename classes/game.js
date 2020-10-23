@@ -5,14 +5,18 @@ class Game {
     this.screen = new Screen(this.levelLayout);
   }
   killPlayer() {
-    this.levelLayout.forEach((tile) => {
-      if (tile[2] === "spike" && this.controller.player.currentXLocation === tile[0] * unit && this.controller.player.currentYLocation === tile[1] * unit) {
-        console.log('spike')
+    this.levelLayout.forEach(([x, y, tileType]) => {
+      console.log(x, y, tileType);
+      if (
+        tileType === "spike" &&
+        this.controller.player.currentXLocation === x * unit &&
+        this.controller.player.currentYLocation === y * unit
+      ) {
+        console.log("spike");
         this.controller.player.currentXLocation = 0;
         this.controller.player.currentYLocation = 8 * unit;
       }
-    })
-
+    });
   }
   startGame() {
     this.screen.drawLevel();
@@ -37,17 +41,22 @@ class Game {
     return array;
   }
 
-  playerMoves(event) {
-    this.controller.movePlayer(event.keyCode);
+  refreshScreen() {
     this.killPlayer();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.startGame();
+  }
+  playerMoves(event) {
+    this.controller.movePlayer(event.keyCode);
+    this.refreshScreen();
   }
 }
 
 let newGame = new Game();
 newGame.makeLevelLayout();
 newGame.startGame();
+
+setInterval(newGame.refreshScreen.bind(newGame), 50);
 
 document.addEventListener("keydown", (event) => {
   newGame.playerMoves(event);
