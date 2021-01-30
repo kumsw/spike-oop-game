@@ -1,4 +1,4 @@
-# Game Hackathon
+# Spike OOP Game
 
 **School of Code - Week 5 Hackathon**
 
