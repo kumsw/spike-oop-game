@@ -42,7 +42,7 @@ Good luck!
 
 - Learnt about SOLID OOP principles.
 
-- Started thinking more about states , properties and behaviour. I practiced planning other classic games into this model.
+- Started thinking more about properties and behaviour. I practiced planning other classic games into this model.
 
 - Canvas: this was the first time we had used HTML canvas to draw graphics on the browser using Javascript.
 
